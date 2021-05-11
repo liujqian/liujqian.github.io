@@ -265,27 +265,27 @@ class _MyHomePageState extends State<MyHomePage> {
                                   scrollDirection: Axis.horizontal,
                                   children: [
                                     ProjectCard(
-                                        "zoola.png",
+                                        "assets/zoola.png",
                                         "A location based anonymous chatting app"
                                             " on the Android platform."),
                                     ProjectCard(
-                                        "ch.jpeg",
+                                        "assets/ch.jpeg",
                                         "A sequential consistent distributed "
                                             "hash table with two-way back-up."
                                             "It was written in Go and tested "
                                             "on GCP."),
                                     ProjectCard(
-                                        "mugshare.png",
+                                        "assets/mugshare.png",
                                         "A mug tracking application for mugshare, "
                                             "a social impact program that "
                                             "provides a convenient mug deposit-return system."),
                                     ProjectCard(
-                                        "card.png",
+                                        "assets/card.png",
                                         "An automatic blackjack dealing machine "
                                             "that incorporates machine learning, computer vision, FPGA and "
                                             "embedded programming."),
                                     ProjectCard(
-                                        "intelligent_pot.jpg",
+                                        "assets/intelligent_pot.jpg",
                                         "A robotic pot holder that uses Raspberry Pi to "
                                             "detect light and moisture level. A "
                                             "web application is written for remote control."),
