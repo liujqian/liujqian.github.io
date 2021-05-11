@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -46,10 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Divider(
-            height: 8,
+            height: 4,
           ),
           Expanded(
             child: Row(
@@ -78,7 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white,
                               ),
                               Text(" Email",
-                                  style: TextStyle(color: Colors.white))
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width < 650 ? 10 : 18))
                             ],
                           ),
                           onPressed: () async => await canLaunch(
@@ -97,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white,
                               ),
                               Text(" Github",
-                                  style: TextStyle(color: Colors.white))
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width < 650 ? 10 : 18))
                             ],
                           ),
                           onPressed: () async => await canLaunch(
@@ -116,7 +120,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white,
                               ),
                               Text(" Facebook",
-                                  style: TextStyle(color: Colors.white))
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width < 650 ? 10 : 18))
                             ],
                           ),
                           onPressed: () async => await canLaunch(
@@ -136,14 +142,31 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white,
                               ),
                               Text(" Douban",
-                                  style: TextStyle(color: Colors.white))
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width < 650 ? 10 : 18))
                             ],
                           ),
-                          onPressed: () async => await canLaunch(
-                                  "https://www.douban.com/people/liujqian/")
-                              ? await launch(
-                                  "https://www.douban.com/people/liujqian/")
-                              : throw 'Could not launch https://www.douban.com/people/liujqian/'),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                content: Text(
+                                    "My Douban ID is liujqian. Feel free to follow me on Douban!",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                    )),
+                                actions: <Widget>[
+                                  new FlatButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: new Text('OK'),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
                       Divider(),
                       MaterialButton(
                           color: Colors.blue,
@@ -156,7 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white,
                               ),
                               Text(" Chinese CV",
-                                  style: TextStyle(color: Colors.white))
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width < 650 ? 10 : 18))
                             ],
                           ),
                           onPressed: () async => await canLaunch(chinese_cv)
@@ -174,7 +199,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white,
                               ),
                               Text(" English CV",
-                                  style: TextStyle(color: Colors.white))
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: width < 650 ? 10 : 18))
                             ],
                           ),
                           onPressed: () async => await canLaunch(
@@ -189,32 +216,89 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 16,
                 ),
                 Expanded(
-                    child: Column(
-                  children: [
-                    Card(
-                      color: Colors.indigo,
-                      shape: StadiumBorder(
-                          side: BorderSide(color: Colors.indigo, width: 2)),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: width < 650 ? 28 : 46,
-                          horizontal: width < 650 ? 28 : 46,
-                        ),
-                        child: Text(
-                          '    Hello my friend. Welcome to my homepage. '
-                          'My name is Jingqian Liu; my friends also call me Larry. '
-                          'I completed my undergraduate degree in computer engineering '
-                          'in the Department of Electrical and Computer Engineering '
-                          'in the University of British Columbia. I love to code and '
-                          'learn new technologies very much! ',
-                          style: TextStyle(
-                              fontSize: width < 650 ? 12 : 20,
-                              color: Colors.white),
+                  child: ListView(
+                    children: [
+                      Card(
+                        elevation: 16,
+                        color: Colors.indigo,
+                        shape: StadiumBorder(
+                            side: BorderSide(color: Colors.indigo, width: 2)),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: width < 650 ? 32 : 46,
+                            horizontal: width < 650 ? 32 : 46,
+                          ),
+                          child: Text(
+                            '    Hello my friend. Welcome to my homepage. '
+                            'My name is Jingqian Liu; my friends also call me Larry. '
+                            'I completed my undergraduate degree in computer engineering '
+                            'in the Department of Electrical and Computer Engineering '
+                            'in the University of British Columbia. I love to code and '
+                            'learn new technologies very much! ',
+                            style: TextStyle(
+                                fontSize: width < 650 ? 12 : 20,
+                                color: Colors.white),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                )),
+                      Card(
+                        shape: BeveledRectangleBorder(
+                            side: BorderSide(
+                                color: Colors.deepPurpleAccent, width: 2)),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 8,
+                          ),
+                          child: Column(
+                            children: [
+                              Text(
+                                ' Things/Project of Which I Am Proud ',
+                                style: TextStyle(
+                                    fontSize: width < 650 ? 12 : 20,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 0.5 * height,
+                                child: ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    ProjectCard(
+                                        "zoola.png",
+                                        "A location based anonymous chatting app"
+                                            " on the Android platform."),
+                                    ProjectCard(
+                                        "ch.jpeg",
+                                        "A sequential consistent distributed "
+                                            "hash table with two-way back-up."
+                                            "It was written in Go and tested "
+                                            "on GCP."),
+                                    ProjectCard(
+                                        "mugshare.png",
+                                        "A mug tracking application for mugshare, "
+                                            "a social impact program that "
+                                            "provides a convenient mug deposit-return system."),
+                                    ProjectCard(
+                                        "card.png",
+                                        "An automatic blackjack dealing machine "
+                                            "that incorporates machine learning, computer vision, FPGA and "
+                                            "embedded programming."),
+                                    ProjectCard(
+                                        "intelligent_pot.jpg",
+                                        "A robotic pot holder that uses Raspberry Pi to "
+                                            "detect light and moisture level. A "
+                                            "web application is written for remote control."),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 VerticalDivider(
                   width: 16,
                 ),
@@ -223,6 +307,62 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ProjectCard extends StatelessWidget {
+  final String imgSrc;
+  final String desc;
+
+  ProjectCard(this.imgSrc, this.desc);
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    Widget card = SizedBox(
+      width: width < 620 ? 150 : 180,
+      child: Card(
+        shape: RoundedRectangleBorder(
+            side: BorderSide(
+                color: Colors.deepPurpleAccent,
+                width: 2,
+                style: BorderStyle.solid)),
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8),
+              child: Image.asset(imgSrc),
+            ),
+            Text(
+              desc,
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
+    return MaterialButton(
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: Text("This page is not yet implemented : ) Stay tuned!",
+                style: TextStyle(
+                  fontSize: 20,
+                )),
+            actions: <Widget>[
+              new FlatButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: new Text('OK'),
+              ),
+            ],
+          ),
+        );
+      },
+      child: card,
     );
   }
 }
