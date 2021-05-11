@@ -11,11 +11,11 @@ const RESOURCES = {
 "assets/AssetManifest.json": "abddf89443d12d4118b3d5312dc7c6a5",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "db9001d88d51c405a2fbfc7e2ac0fd67",
-"main.dart.js": "316f86e5a23976ffc170329f1cd58d8e",
+"main.dart.js": "6388a6bd4173121390e655cb9cae2bb8",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "12a7aa009f297bdc5a860eb1c280b917",
-"/": "12a7aa009f297bdc5a860eb1c280b917",
+"index.html": "8377fccebe3362d66f8eb10dcae3357f",
+"/": "8377fccebe3362d66f8eb10dcae3357f",
 "version.json": "d112a6a4a71605cb57c8f0db4c4b4a39"
 };
 
